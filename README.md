@@ -108,7 +108,8 @@ shifts in the future of mathematics:
 
 * **Cross-Disciplinary Convergence: Math as Code**: The boundary between "pure
   math" and "software engineering" is blurring. The same tools used to solve
-  Erdős problems are already being used by companies like AWS to formally verify
+  Erdős problems are already being used by companies like
+  [AWS to formally verify](https://aws.amazon.com/blogs/opensource/lean-into-verified-software-development/)
   security policies and critical code.
 
   * _Reliability Beyond Math:_ This level of rigour is moving into aerospace,
