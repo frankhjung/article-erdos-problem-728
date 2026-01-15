@@ -1,6 +1,10 @@
-# A New Frontier in Mathematics: AI Solves Erdős Problem \#728
+---
+title: "A New Frontier in Mathematics: AI Solves Erdős Problem #728"
+author: "frankhjung@linux.com"
+date: "2026-01-15"
+---
 
-![](./ai-solves-erdos-problem-728-cover.png)
+![Frankly Speaking ... Banner](./ai-solves-erdos-problem-728-cover.png)
 
 On **January 6, 2026**, the mathematical community reached a significant
 milestone: the resolution of [Erdős problem
