@@ -1,19 +1,32 @@
 #!/usr/bin/make
 
 .SUFFIXES:
-.SUFFIXES:	.md
+.SUFFIXES: .html .md .pdf
 
-TITLE := A New Frontier in Mathematics: AI Solves Erdős Problem \#728
+PROJECT:= erdos-problem-728
+PANDOC := pandoc
 
-default: public/index.html
+default: $(PROJECT).html $(PROJECT).pdf
 
-public/index.html: README.md article.css
+.md.html:
 	@mkdir -p public
-	@pandoc --from=gfm --to=html5 --embed-resources --standalone \
-		--css=article.css \
-		--metadata title="$(TITLE)" \
-		--output=$@ README.md
+	@$(PANDOC) \
+		--from=gfm --to html5 \
+		--embed-resources --standalone --css article.css \
+		--output public/$@ \
+		$<
+	@mv public/$@ public/index.html
+
+.md.pdf:
+	@mkdir -p public
+	@$(PANDOC) \
+		--include-in-header header-include.tex \
+		--from=markdown --pdf-engine=xelatex \
+		--css article.css \
+		--toc \
+		--output public/$@ \
+		$<
 
 .PHONY: clean
 clean:
-	@$(RM) -rf public cache figure
+	@$(RM) -rf public
